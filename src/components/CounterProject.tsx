@@ -31,7 +31,7 @@ export default function CounterProject({ onBack }: ProjectComponentProps) {
             </div>
           </div>
 
-          <div className="bg-linear-to-br from-blue-500 to-cyan-500 rounded-xl p-12 mb-8">
+          <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl p-12 mb-8">
             <div className="text-center">
               <div className="text-white text-8xl font-bold mb-4 animate-pulse">
                 {count}
