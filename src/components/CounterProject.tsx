@@ -9,7 +9,7 @@ export default function CounterProject({ onBack }: ProjectComponentProps) {
   const steps = [1, 2, 3, 5, 10];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-cyan-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -31,7 +31,7 @@ export default function CounterProject({ onBack }: ProjectComponentProps) {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl p-12 mb-8">
+          <div className="bg-linear-to-br from-blue-500 to-cyan-500 rounded-xl p-12 mb-8">
             <div className="text-center">
               <div className="text-white text-8xl font-bold mb-4 animate-pulse">
                 {count}
