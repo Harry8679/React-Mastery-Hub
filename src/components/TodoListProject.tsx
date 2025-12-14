@@ -1,4 +1,5 @@
-import { useState, KeyboardEvent } from 'react';
+import { useState } from 'react';
+import type { KeyboardEvent } from 'react';
 import { ChevronLeft, Code2, Plus, Trash2, Check } from 'lucide-react';
 import { ProjectComponentProps } from '../../types';
 
