@@ -80,7 +80,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
         ></div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes shine {
           to {
             transform: translateX(100%);
