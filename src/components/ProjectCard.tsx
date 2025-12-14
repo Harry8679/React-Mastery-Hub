@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Layers } from 'lucide-react';
-import { Project } from '../types';
+import type { Project } from '../types';
 
 interface ProjectCardProps {
   project: Project;
@@ -33,7 +33,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
         }}
       >
         {/* Gradient Header */}
-        <div className={`h-32 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
+        <div className={`h-32 bg-linear-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
           <span className="text-6xl filter drop-shadow-lg">{project.icon}</span>
         </div>
@@ -73,7 +73,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
 
         {/* Shine effect */}
         <div
-          className={`absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-700 ${
+          className={`absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-700 ${
             isHovered ? 'animate-shine' : ''
           }`}
           style={{ transform: 'translateX(-100%)' }}
