@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2, RefreshCw, Users, BookOpen, Image, AlertCircle } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
-import { useFetch } from './useFetch';
+import type { ProjectComponentProps } from '../types';
+import { useFetch } from '../hooks/useFetch';
 
 // ==================== TYPES ====================
 interface User {
