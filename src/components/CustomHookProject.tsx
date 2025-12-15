@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2, RefreshCw, Users, BookOpen, Image, AlertCircle } from 'lucide-react';
-import type { ProjectComponentProps } from '../types';
-import { useFetch } from '../hooks/useFetch';
+import { ProjectComponentProps } from '../../types';
+import { useFetch } from './useFetch';
 
 // ==================== TYPES ====================
 interface User {
@@ -66,7 +66,7 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
     refetch: refetchPhotos,
   } = useFetch<Photo[]>(apiUrls.photos, { autoFetch: selectedEndpoint === 'photos' });
 
-  // Fetch manuel - le hook gère les URLs vides
+  // Fetch manuel - utilise unknown au lieu de any pour plus de sécurité
   const {
     data: manualData,
     loading: manualLoading,
@@ -92,11 +92,8 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
       new URL(trimmedUrl);
       setShowManual(true);
       manualRefetch();
-    } catch (error) {
-        const message = error instanceof Error 
-            ? error.message 
-            : 'URL invalide';
-        alert(`Erreur: ${message}`);
+    } catch (_) {
+      alert('URL invalide. Assurez-vous qu\'elle commence par http:// ou https://');
     }
   };
 
