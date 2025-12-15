@@ -111,14 +111,14 @@ function todoReducer(state: TodoState, action: TodoAction): TodoState {
       };
 
     case 'TOGGLE_ALL':
-      const allCompleted = state.todos.every(todo => todo.completed);
+      { const allCompleted = state.todos.every(todo => todo.completed);
       return {
         ...state,
         todos: state.todos.map(todo => ({
           ...todo,
           completed: !allCompleted,
         })),
-      };
+      }; }
 
     default:
       return state;
@@ -388,7 +388,7 @@ export default function UseReducerProject({ onBack }: ProjectComponentProps) {
                   {/* Checkbox */}
                   <button
                     onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: todo.id })}
-                    className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                    className={`shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
                       todo.completed
                         ? 'bg-green-500 border-green-500'
                         : 'border-gray-300 hover:border-yellow-500'
@@ -399,7 +399,7 @@ export default function UseReducerProject({ onBack }: ProjectComponentProps) {
 
                   {/* Priority Badge */}
                   <span
-                    className={`flex-shrink-0 px-2 py-1 rounded text-xs font-bold uppercase ${
+                    className={`shrink-0 px-2 py-1 rounded text-xs font-bold uppercase ${
                       priorityColors[todo.priority]
                     }`}
                   >
@@ -427,7 +427,7 @@ export default function UseReducerProject({ onBack }: ProjectComponentProps) {
                   )}
 
                   {/* Actions */}
-                  <div className="flex-shrink-0 flex gap-2">
+                  <div className="shrink-0 flex gap-2">
                     {state.editingId === todo.id ? (
                       <>
                         <button
