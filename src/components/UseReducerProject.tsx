@@ -234,7 +234,7 @@ export default function UseReducerProject({ onBack }: ProjectComponentProps) {
 
   // ==================== RENDER ====================
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-yellow-50 to-orange-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -288,7 +288,7 @@ export default function UseReducerProject({ onBack }: ProjectComponentProps) {
               />
               <button
                 onClick={handleAddTodo}
-                className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all transform hover:scale-105 flex items-center gap-2"
+                className="px-6 py-3 bg-linear-to-r from-yellow-500 to-orange-500 text-white rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all transform hover:scale-105 flex items-center gap-2"
               >
                 <Plus size={20} />
                 Ajouter
