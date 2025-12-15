@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import CounterProject from './components/CounterProject';
+import ClockProject from './components/ClockProject';
+import FormProject from './components/FormProject';
+import TodoListProject from './components/TodoListProject';
+import ThemeContextProject from './context/ThemeContextProject';
+import HomePage from './pages/Home';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
