@@ -206,9 +206,10 @@ export default function UseReducerProject({ onBack }: ProjectComponentProps) {
     const sorted = [...filtered];
     switch (state.sort) {
       case 'priority':
-        const priorityOrder = { high: 0, medium: 1, low: 2 };
+        { const priorityOrder = { high: 0, medium: 1, low: 2 };
+        // const priorityOrder = { high: 0, medium: 1, low: 2 };
         sorted.sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]);
-        break;
+        break; }
       case 'alphabetical':
         sorted.sort((a, b) => a.text.localeCompare(b.text));
         break;
