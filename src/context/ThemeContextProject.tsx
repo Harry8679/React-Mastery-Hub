@@ -1,7 +1,7 @@
 import { useState, createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 import { ChevronLeft, Code2, Sun, Moon } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // Définir le type du contexte
 interface ThemeContextType {
