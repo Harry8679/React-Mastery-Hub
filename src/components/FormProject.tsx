@@ -94,7 +94,7 @@ export default function FormProject({ onBack }: ProjectComponentProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-green-50 to-emerald-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -226,7 +226,7 @@ export default function FormProject({ onBack }: ProjectComponentProps) {
 
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all transform hover:scale-105"
+                className="w-full py-4 bg-linear-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all transform hover:scale-105"
               >
                 S'inscrire
               </button>
