@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Sparkles, Code2, Zap } from 'lucide-react';
-import { DifficultyLevel } from '../types';
 import { projects } from '../data/projects';
 import ProjectCard from '../components/ProjectCard';
+import type { DifficultyLevel } from '../types';
 
 interface HomePageProps {
   onSelectProject: (id: number) => void;
