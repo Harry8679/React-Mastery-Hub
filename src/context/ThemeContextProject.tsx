@@ -96,8 +96,8 @@ function ThemeContent({ onBack }: ProjectComponentProps) {
     <div
       className={`min-h-screen transition-colors duration-300 p-8 ${
         theme === 'light'
-          ? 'bg-gradient-to-br from-indigo-50 to-purple-50'
-          : 'bg-gradient-to-br from-gray-900 to-gray-800'
+          ? 'bg-linear-to-br from-indigo-50 to-purple-50'
+          : 'bg-linear-to-br from-gray-900 to-gray-800'
       }`}
     >
       <button
