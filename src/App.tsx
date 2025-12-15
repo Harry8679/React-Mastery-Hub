@@ -1,12 +1,65 @@
-import './App.css'
+import { useState } from 'react';
 
 function App() {
+  const [currentProject, setCurrentProject] = useState<number | null>(null);
 
-  return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+  const handleBack = () => setCurrentProject(null);
+
+  // Router simple basé sur l'ID du projet
+  const renderProject = () => {
+    switch (currentProject) {
+      case 1:
+        return <CounterProject onBack={handleBack} />;
+      case 2:
+        return <ClockProject onBack={handleBack} />;
+      case 3:
+        return <FormProject onBack={handleBack} />;
+      case 4:
+        return <TodoListProject onBack={handleBack} />;
+      case 5:
+        return <ThemeContextProject onBack={handleBack} />;
+      default:
+        return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
+    }
+  };
+
+  if (currentProject) {
+    return renderProject();
+  }
+
+  return <HomePage onSelectProject={setCurrentProject} />;
 }
 
-export default App
+// Composant placeholder pour les projets non implémentés
+function PlaceholderProject({ projectId, onBack }: { projectId: number; onBack: () => void }) {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+      <button
+        onClick={onBack}
+        className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
+      >
+        <span>←</span>
+        Retour à l'accueil
+      </button>
+      <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 text-center">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">
+          Projet #{projectId}
+        </h1>
+        <p className="text-gray-600 mb-8">
+          Ce projet sera implémenté prochainement !
+        </p>
+        <div className="bg-blue-50 rounded-lg p-6">
+          <p className="text-gray-700">
+            Tu peux ajouter ton propre code ici pour implémenter ce projet.
+            Chaque projet suit la même structure modulaire.
+          </p>
+          <p className="text-gray-700 mt-4">
+            Crée un nouveau fichier dans <code className="bg-gray-200 px-2 py-1 rounded">src/projects/</code>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
