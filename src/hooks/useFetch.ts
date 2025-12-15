@@ -19,6 +19,12 @@ export function useFetch<T>(url: string, options: FetchOptions = {}): UseFetchRe
   const [trigger, setTrigger] = useState<number>(0);
 
   useEffect(() => {
+    // Ne pas faire de fetch si l'URL est vide
+    if (!url || url.trim() === '') {
+      setLoading(false);
+      return;
+    }
+
     if (!autoFetch && trigger === 0) return;
 
     const controller = new AbortController();

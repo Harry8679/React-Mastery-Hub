@@ -66,13 +66,13 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
     refetch: refetchPhotos,
   } = useFetch<Photo[]>(apiUrls.photos, { autoFetch: selectedEndpoint === 'photos' });
 
-  // Fetch manuel
+  // Fetch manuel - le hook gère les URLs vides
   const {
     data: manualData,
     loading: manualLoading,
     error: manualError,
     refetch: manualRefetch,
-  } = useFetch<any>(manualUrl, { autoFetch: false });
+  } = useFetch<unknown>(manualUrl, { autoFetch: false });
 
   // Handlers
   const handleEndpointChange = (endpoint: ApiEndpoint) => {
@@ -81,9 +81,19 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
   };
 
   const handleManualFetch = () => {
-    if (manualUrl.trim()) {
+    const trimmedUrl = manualUrl.trim();
+    if (!trimmedUrl) {
+      alert('Veuillez entrer une URL valide');
+      return;
+    }
+    
+    // Vérification basique de l'URL
+    try {
+      new URL(trimmedUrl);
       setShowManual(true);
       manualRefetch();
+    } catch (e) {
+      alert('URL invalide. Assurez-vous qu\'elle commence par http:// ou https://');
     }
   };
 
@@ -104,7 +114,7 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
 
   // ==================== RENDER ====================
   return (
-    <div className="min-h-screen bg-linear-to-br from-teal-50 to-green-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-green-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -188,12 +198,13 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
                 type="text"
                 value={manualUrl}
                 onChange={(e) => setManualUrl(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleManualFetch()}
                 placeholder="https://jsonplaceholder.typicode.com/users/1"
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
               <button
                 onClick={handleManualFetch}
-                className="px-6 py-2 bg-linear-to-r from-teal-500 to-green-500 text-white rounded-lg hover:from-teal-600 hover:to-green-600 transition-all"
+                className="px-6 py-2 bg-gradient-to-r from-teal-500 to-green-500 text-white rounded-lg hover:from-teal-600 hover:to-green-600 transition-all"
               >
                 Fetch
               </button>
@@ -230,7 +241,7 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
           {/* Error State */}
           {error && !loading && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-6 flex items-start gap-3">
-              <AlertCircle className="text-red-500 shrink-0" size={24} />
+              <AlertCircle className="text-red-500 flex-shrink-0" size={24} />
               <div>
                 <h3 className="text-red-800 font-semibold mb-1">Erreur lors du chargement</h3>
                 <p className="text-red-700">{error}</p>
@@ -264,7 +275,7 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
                   {(data as Post[]).map((post) => (
                     <div key={post.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                       <div className="flex items-start gap-3">
-                        <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 font-bold">
+                        <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">
                           {post.id}
                         </div>
                         <div className="flex-1">
