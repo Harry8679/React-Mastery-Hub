@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2, RefreshCw, Users, BookOpen, Image, AlertCircle } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
-import { useFetch } from './useFetch';
+import type { ProjectComponentProps } from '../types';
+import { useFetch } from '../hooks/useFetch';
 
 // ==================== TYPES ====================
 interface User {
@@ -66,13 +66,13 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
     refetch: refetchPhotos,
   } = useFetch<Photo[]>(apiUrls.photos, { autoFetch: selectedEndpoint === 'photos' });
 
-  // Fetch manuel - utilise unknown au lieu de any pour plus de sécurité
+  // Fetch manuel - le hook gère les URLs vides
   const {
     data: manualData,
     loading: manualLoading,
     error: manualError,
     refetch: manualRefetch,
-  } = useFetch<unknown>(manualUrl, { autoFetch: false });
+  } = useFetch<never>(manualUrl, { autoFetch: false });
 
   // Handlers
   const handleEndpointChange = (endpoint: ApiEndpoint) => {
@@ -92,7 +92,8 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
       new URL(trimmedUrl);
       setShowManual(true);
       manualRefetch();
-    } catch (_) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (e) {
       alert('URL invalide. Assurez-vous qu\'elle commence par http:// ou https://');
     }
   };
