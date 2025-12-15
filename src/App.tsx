@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CounterProject from './components/CounterProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
