@@ -115,7 +115,7 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
 
   // ==================== RENDER ====================
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-green-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-teal-50 to-green-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
