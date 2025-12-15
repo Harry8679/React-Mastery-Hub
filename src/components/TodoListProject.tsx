@@ -62,7 +62,7 @@ export default function TodoListProject({ onBack }: ProjectComponentProps) {
   const activeCount = todos.filter(todo => !todo.completed).length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-orange-50 to-red-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -96,7 +96,7 @@ export default function TodoListProject({ onBack }: ProjectComponentProps) {
             />
             <button
               onClick={addTodo}
-              className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg hover:from-orange-600 hover:to-red-600 transition-all transform hover:scale-105 flex items-center gap-2"
+              className="px-6 py-3 bg-linear-to-r from-orange-500 to-red-500 text-white rounded-lg hover:from-orange-600 hover:to-red-600 transition-all transform hover:scale-105 flex items-center gap-2"
             >
               <Plus size={20} />
               Ajouter
@@ -142,7 +142,7 @@ export default function TodoListProject({ onBack }: ProjectComponentProps) {
                 >
                   <button
                     onClick={() => toggleTodo(todo.id)}
-                    className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                    className={`shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
                       todo.completed
                         ? 'bg-green-500 border-green-500'
                         : 'border-gray-300 hover:border-orange-500'
@@ -163,7 +163,7 @@ export default function TodoListProject({ onBack }: ProjectComponentProps) {
 
                   <button
                     onClick={() => deleteTodo(todo.id)}
-                    className="flex-shrink-0 text-red-500 hover:text-red-700 transition-colors"
+                    className="shrink-0 text-red-500 hover:text-red-700 transition-colors"
                   >
                     <Trash2 size={20} />
                   </button>
