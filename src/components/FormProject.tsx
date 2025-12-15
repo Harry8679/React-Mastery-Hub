@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from "react";
 import { ChevronLeft, Code2, CheckCircle, XCircle } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 interface FormData {
   name: string;
