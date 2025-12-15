@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, Code2 } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 export default function ClockProject({ onBack }: ProjectComponentProps) {
   const [time, setTime] = useState<Date>(new Date());
