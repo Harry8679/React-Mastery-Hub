@@ -39,7 +39,7 @@ function App() {
 // Composant placeholder pour les projets non implémentés
 function PlaceholderProject({ projectId, onBack }: { projectId: number; onBack: () => void }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
