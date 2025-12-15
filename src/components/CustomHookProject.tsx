@@ -92,8 +92,11 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
       new URL(trimmedUrl);
       setShowManual(true);
       manualRefetch();
-    } catch (e) {
-      alert('URL invalide. Assurez-vous qu\'elle commence par http:// ou https://');
+    } catch (error) {
+        const message = error instanceof Error 
+            ? error.message 
+            : 'URL invalide';
+        alert(`Erreur: ${message}`);
     }
   };
 
