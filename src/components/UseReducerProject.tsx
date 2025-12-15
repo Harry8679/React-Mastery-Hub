@@ -1,6 +1,7 @@
-import { useReducer, useState, KeyboardEvent } from 'react';
+import { useReducer, useState } from 'react';
+import type { KeyboardEvent } from 'react';
 import { ChevronLeft, Code2, Plus, Trash2, Check, Edit2, X, Save } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 interface Todo {
