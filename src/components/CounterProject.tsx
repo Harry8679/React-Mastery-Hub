@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2 } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 export default function CounterProject({ onBack }: ProjectComponentProps) {
   const [count, setCount] = useState<number>(0);
