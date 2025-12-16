@@ -151,11 +151,14 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
   };
 
   // ==================== RENDER COUNT ====================
-  const renderCount = useRef(0);
+//   const renderCount = useRef(0);
+  const renderCountRef = useRef(0);
+  const [renderCount, setRenderCount] = useState(0);
   
   useEffect(() => {
-    renderCount.current += 1;
-  });
+    renderCountRef.current += 1;
+    setRenderCount(renderCountRef.current);
+  }, []);
 
   // ==================== RENDER ====================
   return (
@@ -187,7 +190,7 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
           {/* Render Count */}
           <div className="mb-6 bg-linear-to-r from-violet-50 to-purple-50 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-violet-600">
-              Renders du composant parent: {renderCount.current}
+              Renders du composant parent: {renderCount}
             </div>
             <p className="text-sm text-gray-600 mt-1">
               👉 Ouvre la console pour voir quand les fonctions sont créées
