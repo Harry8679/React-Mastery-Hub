@@ -127,7 +127,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
 
   // ==================== RENDER ====================
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-pink-50 to-rose-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -176,7 +176,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
 
           <div className="space-y-8">
             {/* EXEMPLE 1: FOCUS INPUT */}
-            <div ref={section1Ref} className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-6">
+            <div ref={section1Ref} className="bg-linear-to-r from-pink-50 to-rose-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                 <Focus className="text-pink-500" size={28} />
                 1. Focus sur Input
@@ -224,7 +224,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 2: VIDEO PLAYER */}
-            <div ref={section2Ref} className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6">
+            <div ref={section2Ref} className="bg-linear-to-r from-purple-50 to-pink-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                 <Video className="text-purple-500" size={28} />
                 2. Contrôle de Vidéo
@@ -295,7 +295,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 3: TIMER */}
-            <div ref={section3Ref} className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
+            <div ref={section3Ref} className="bg-linear-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                 <Timer className="text-blue-500" size={28} />
                 3. Timer avec useRef
@@ -341,7 +341,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 4: RENDER COUNT */}
-            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-yellow-50 to-orange-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 4. Compteur de Renders
               </h2>
@@ -370,7 +370,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 5: PREVIOUS VALUE */}
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-green-50 to-emerald-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 5. Valeur Précédente
               </h2>
