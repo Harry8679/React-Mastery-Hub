@@ -117,9 +117,13 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
   const section2Ref = useRef<HTMLDivElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+//   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+//     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//   };
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+    };
 
   // ==================== RENDER ====================
   return (
