@@ -7,6 +7,7 @@ import ThemeContextProject from './context/ThemeContextProject';
 import HomePage from './pages/Home';
 import UseReducerProject from './components/UseReducerProject';
 import CustomHookProject from './components/CustomHookProject';
+import UseRefProject from './components/UseRefProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -30,6 +31,8 @@ function App() {
         return <UseReducerProject onBack={handleBack} />
       case 7:
         return <CustomHookProject onBack={handleBack} />
+      case 8:
+        return <UseRefProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
