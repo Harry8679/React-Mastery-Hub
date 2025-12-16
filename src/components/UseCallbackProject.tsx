@@ -1,6 +1,6 @@
 import { useState, useCallback, memo, useRef, useEffect } from 'react';
 import { ChevronLeft, Code2, Zap, RefreshCw, CheckCircle, AlertTriangle } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== COMPOSANTS ENFANTS MÉMOÏSÉS ====================
 
@@ -11,11 +11,14 @@ interface ChildProps {
 }
 
 const ChildComponent = memo(({ name, onClick }: ChildProps) => {
-  const renderCount = useRef(0);
+  const renderCountRef = useRef(0);
+  const [renderCount, setRenderCount] = useState(0);
+  const [displayRenderCount, setDisplayRenderCount] = useState(0);
   
   useEffect(() => {
-    renderCount.current += 1;
-  });
+    renderCountRef.current += 1;
+    setRenderCount(renderCountRef.current); // ← autorisé
+  }, []);
 
   console.log(`🔵 ${name} rendu ${renderCount.current} fois`);
 
@@ -153,7 +156,7 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
 
   // ==================== RENDER ====================
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-purple-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-violet-50 to-purple-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -179,7 +182,7 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
           </div>
 
           {/* Render Count */}
-          <div className="mb-6 bg-gradient-to-r from-violet-50 to-purple-50 rounded-lg p-4 text-center">
+          <div className="mb-6 bg-linear-to-r from-violet-50 to-purple-50 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-violet-600">
               Renders du composant parent: {renderCount.current}
             </div>
@@ -190,7 +193,7 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
 
           <div className="space-y-8">
             {/* EXEMPLE 1: CALLBACK SIMPLE */}
-            <div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-violet-50 to-purple-50 rounded-xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
                   <Zap className="text-violet-500" size={28} />
@@ -258,7 +261,7 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 2: CALLBACK AVEC DÉPENDANCES */}
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
                   <RefreshCw className="text-blue-500" size={28} />
@@ -356,7 +359,7 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 3: LISTE AVEC CALLBACKS */}
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-green-50 to-emerald-50 rounded-xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-gray-800">
                   3. Liste avec Callbacks (Forme Fonctionnelle)
