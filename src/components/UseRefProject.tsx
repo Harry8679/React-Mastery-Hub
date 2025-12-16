@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, Code2, Focus, Video, Play, Pause, RotateCcw, Timer } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 export default function UseRefProject({ onBack }: ProjectComponentProps) {
   // ==================== EXEMPLE 1: FOCUS INPUT ====================
