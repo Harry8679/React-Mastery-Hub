@@ -21,6 +21,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [renderCountDisplay, setRenderCountDisplay] = useState(0);
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -102,7 +103,8 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
   
   useEffect(() => {
     renderCount.current += 1;
-  });
+    setRenderCountDisplay(renderCount.current);
+  }, []);
 
   // ==================== EXEMPLE 5: PREVIOUS VALUE ====================
   const [name, setName] = useState('');
