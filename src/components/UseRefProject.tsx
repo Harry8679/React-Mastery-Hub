@@ -22,6 +22,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [renderCountDisplay, setRenderCountDisplay] = useState(0);
+  const [previousName, setPreviousName] = useState('');
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -97,6 +98,11 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
       }
     };
   }, []);
+
+  useEffect(() => {
+    setPreviousName(previousNameRef.current);
+    previousNameRef.current = name;
+    }, [name]); 
 
   // ==================== EXEMPLE 4: COMPTEUR DE RENDERS ====================
   const renderCount = useRef(0);
@@ -351,7 +357,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
               <div className="bg-white rounded-lg p-6 space-y-4">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-orange-600 mb-2">
-                    {renderCount.current}
+                    {renderCountDisplay}
                   </div>
                   <p className="text-gray-600">Nombre de renders du composant</p>
                 </div>
@@ -391,7 +397,7 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
                     <strong>Valeur actuelle:</strong> {name || '(vide)'}
                   </p>
                   <p className="text-gray-700">
-                    <strong>Valeur précédente:</strong> {previousNameRef.current || '(vide)'}
+                    <strong>Valeur précédente:</strong> {previousName || '(vide)'}
                   </p>
                 </div>
 
