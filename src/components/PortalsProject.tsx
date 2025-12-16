@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { ChevronLeft, Code2, X, AlertTriangle, CheckCircle, Info, Trash2 } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import { ChevronLeft, Code2, X, AlertTriangle, CheckCircle, Info } from 'lucide-react';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== COMPOSANTS PORTAL ====================
 
