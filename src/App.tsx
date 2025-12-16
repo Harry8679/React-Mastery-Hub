@@ -12,6 +12,8 @@ import UseMemoProject from './components/UseMemoProject';
 import UseCallbackProject from './components/UseCallbackProject';
 import PortalsProject from './components/PortalsProject';
 import ErrorBoundaryProject from './components/ErrorBoundaryProject';
+import LazyLoadingProject from './components/LazyLoadingProject';
+import HOCProject from './components/HOCProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -45,6 +47,10 @@ function App() {
         return <PortalsProject onBack={handleBack} />
       case 12:
         return <ErrorBoundaryProject onBack={handleBack} />;
+      case 13:
+        return <LazyLoadingProject onBack={handleBack} />
+      case 14:
+        return <HOCProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
