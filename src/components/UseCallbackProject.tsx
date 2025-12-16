@@ -446,7 +446,7 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
                 • <strong>Dependencies Array</strong>: Fonction recréée uniquement si dépendances changent
               </li>
               <li>
-                • <strong>Forme Fonctionnelle</strong>: <code>setState(prev => ...)</code> évite dépendances
+                • <strong>Forme Fonctionnelle</strong>: <code>setState(prev =&gt; ...)</code> évite les dépendances
               </li>
               <li>
                 • <strong>Performance</strong>: Évite re-renders inutiles de composants enfants
