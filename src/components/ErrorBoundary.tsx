@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { ChevronLeft, Code2, X, AlertTriangle, CheckCircle, Info, Trash2 } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import { ChevronLeft, Code2, X, AlertTriangle, CheckCircle, Info } from 'lucide-react';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== COMPOSANTS PORTAL ====================
 
@@ -237,7 +237,7 @@ export default function PortalsProject({ onBack }: ProjectComponentProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-fuchsia-50 to-pink-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -264,7 +264,7 @@ export default function PortalsProject({ onBack }: ProjectComponentProps) {
 
           <div className="space-y-8">
             {/* EXEMPLE 1: MODAL BASIQUE */}
-            <div className="bg-gradient-to-r from-fuchsia-50 to-pink-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-fuchsia-50 to-pink-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 1. Modal Basique
               </h2>
@@ -289,7 +289,7 @@ export default function PortalsProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 2: MODALS DE CONFIRMATION */}
-            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-yellow-50 to-orange-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 2. Modals de Confirmation
               </h2>
@@ -317,7 +317,7 @@ export default function PortalsProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 3: TOAST NOTIFICATIONS */}
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-green-50 to-emerald-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 3. Toast Notifications
               </h2>
@@ -351,7 +351,7 @@ export default function PortalsProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 4: SIDEBAR */}
-            <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-purple-50 to-indigo-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 4. Sidebar Panel
               </h2>
@@ -385,7 +385,7 @@ export default function PortalsProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* LOG DES ACTIONS */}
-            <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-gray-50 to-slate-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 📝 Log des Actions
               </h2>
