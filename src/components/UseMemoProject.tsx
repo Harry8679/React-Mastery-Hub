@@ -34,6 +34,12 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
   const [count, setCount] = useState(0);
   const [number, setNumber] = useState(5);
   const [useMemoEnabled, setUseMemoEnabled] = useState(true);
+  const [renderDisplay, setRenderDisplay] = useState(0);
+
+  useEffect(() => {
+  renderCount.current += 1;
+  setRenderDisplay(renderCount.current);
+}, []);
 
   // Sans useMemo (recalculé à chaque render)
   const expensiveResultWithout = useMemoEnabled ? 0 : expensiveCalculation(number);
@@ -88,9 +94,9 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
   // ==================== RENDER TRACKING ====================
   const renderCount = useRef(0);
   
-  useEffect(() => {
-    renderCount.current += 1;
-  });
+//   useEffect(() => {
+//     renderCount.current += 1;
+//   });
 
   // ==================== RENDER ====================
   return (
@@ -122,7 +128,7 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
           {/* Render Count */}
           <div className="mb-6 bg-linear-to-r from-blue-50 to-cyan-50 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-blue-600">
-              Renders: {renderCount.current}
+              Renders: {renderDisplay}
             </div>
             <p className="text-sm text-gray-600 mt-1">
               Nombre total de re-renders du composant
