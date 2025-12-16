@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { ChevronLeft, Code2, Zap, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== HELPER FUNCTIONS ====================
 // Fonction coûteuse pour simuler un calcul long
