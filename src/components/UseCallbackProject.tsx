@@ -455,7 +455,8 @@ export default function UseCallbackProject({ onBack }: ProjectComponentProps) {
 
             <div className="mt-4 bg-white rounded p-4 space-y-2">
               <p className="text-sm text-gray-600 font-mono">
-                const handleClick = useCallback(() => {'{'} ... {'}'}, [dep1, dep2]);
+                {/* const handleClick = useCallback(() => {'{'} ... {'}'}, [dep1, dep2]); */}
+                {"const handleClick = useCallback(() => {'{'} ... {'}'}, [dep1, dep2]);"}
               </p>
               <p className="text-xs text-gray-500">
                 ⚡ La fonction garde la même référence si dep1 et dep2 ne changent pas
