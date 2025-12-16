@@ -94,7 +94,7 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
 
   // ==================== RENDER ====================
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-blue-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-cyan-50 to-blue-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -120,7 +120,7 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
           </div>
 
           {/* Render Count */}
-          <div className="mb-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-4 text-center">
+          <div className="mb-6 bg-linear-to-r from-blue-50 to-cyan-50 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-blue-600">
               Renders: {renderCount.current}
             </div>
@@ -131,7 +131,7 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
 
           <div className="space-y-8">
             {/* EXEMPLE 1: CALCUL COÛTEUX */}
-            <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-cyan-50 to-blue-50 rounded-xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
                   <Zap className="text-cyan-500" size={28} />
@@ -219,7 +219,7 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 2: LISTE FILTRÉE */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-purple-50 to-pink-50 rounded-xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
                   <TrendingUp className="text-purple-500" size={28} />
@@ -306,7 +306,7 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
             </div>
 
             {/* EXEMPLE 3: OBJET COMPLEXE */}
-            <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-orange-50 to-yellow-50 rounded-xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-gray-800">
                   3. Objet Complexe (Référence)
