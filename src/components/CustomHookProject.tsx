@@ -242,7 +242,7 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
           {/* Error State */}
           {error && !loading && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-6 flex items-start gap-3">
-              <AlertCircle className="text-red-500 flex-shrink-0" size={24} />
+              <AlertCircle className="text-red-500 shrink-0" size={24} />
               <div>
                 <h3 className="text-red-800 font-semibold mb-1">Erreur lors du chargement</h3>
                 <p className="text-red-700">{error}</p>
@@ -276,7 +276,7 @@ export default function CustomHookProject({ onBack }: ProjectComponentProps) {
                   {(data as Post[]).map((post) => (
                     <div key={post.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                       <div className="flex items-start gap-3">
-                        <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">
+                        <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 font-bold">
                           {post.id}
                         </div>
                         <div className="flex-1">
