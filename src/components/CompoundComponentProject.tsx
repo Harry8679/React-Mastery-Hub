@@ -1,6 +1,7 @@
-    import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState } from 'react';
+import type { ReactNode } from 'react';
 import { ChevronLeft, Code2, ChevronDown, ChevronRight, X, Check, Star } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== ACCORDION COMPOUND COMPONENT ====================
 
@@ -52,7 +53,7 @@ interface AccordionItemProps {
   id: string;
 }
 
-Accordion.Item = function AccordionItem({ children, id }: AccordionItemProps) {
+Accordion.Item = function AccordionItem({ children }: AccordionItemProps) {
   return <div className="border border-gray-200 rounded-lg overflow-hidden">{children}</div>;
 };
 
@@ -366,7 +367,7 @@ Menu.Item = function MenuItem({ children, onClick }: MenuItemProps) {
 // ==================== COMPOSANT PRINCIPAL ====================
 export default function CompoundComponentsProject({ onBack }: ProjectComponentProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-purple-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-violet-50 to-purple-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -393,7 +394,7 @@ export default function CompoundComponentsProject({ onBack }: ProjectComponentPr
 
           <div className="space-y-8">
             {/* EXEMPLE 1: ACCORDION */}
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-blue-50 to-cyan-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                 <ChevronRight className="text-blue-500" size={28} />
                 1. Accordion Component
@@ -453,7 +454,7 @@ export default function CompoundComponentsProject({ onBack }: ProjectComponentPr
             </div>
 
             {/* EXEMPLE 2: TABS */}
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-green-50 to-emerald-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 2. Tabs Component
               </h2>
@@ -503,14 +504,14 @@ export default function CompoundComponentsProject({ onBack }: ProjectComponentPr
                   <h3 className="font-bold text-gray-800 mb-2">Notifications</h3>
                   <div className="space-y-3">
                     <div className="flex gap-3 p-3 bg-blue-50 rounded border-l-4 border-blue-500">
-                      <Check className="text-blue-500 flex-shrink-0" size={20} />
+                      <Check className="text-blue-500 shrink-0" size={20} />
                       <div>
                         <div className="font-medium text-gray-800">Compte vérifié</div>
                         <div className="text-sm text-gray-600">Il y a 2 heures</div>
                       </div>
                     </div>
                     <div className="flex gap-3 p-3 bg-yellow-50 rounded border-l-4 border-yellow-500">
-                      <Star className="text-yellow-500 flex-shrink-0" size={20} />
+                      <Star className="text-yellow-500 shrink-0" size={20} />
                       <div>
                         <div className="font-medium text-gray-800">Nouveau badge obtenu</div>
                         <div className="text-sm text-gray-600">Hier</div>
@@ -526,7 +527,7 @@ export default function CompoundComponentsProject({ onBack }: ProjectComponentPr
             </div>
 
             {/* EXEMPLE 3: MODAL */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-purple-50 to-pink-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 3. Modal Component
               </h2>
@@ -565,7 +566,7 @@ export default function CompoundComponentsProject({ onBack }: ProjectComponentPr
             </div>
 
             {/* EXEMPLE 4: DROPDOWN MENU */}
-            <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6">
+            <div className="bg-linear-to-r from-orange-50 to-amber-50 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 4. Dropdown Menu
               </h2>
