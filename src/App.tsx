@@ -15,6 +15,7 @@ import ErrorBoundaryProject from './components/ErrorBoundaryProject';
 import LazyLoadingProject from './components/LazyLoadingProject';
 import HOCProject from './components/HOCProject';
 import RenderPropsProject from './components/RenderPropsProject';
+import CompoundComponentsProject from './components/CompoundComponentProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -54,6 +55,8 @@ function App() {
         return <HOCProject onBack={handleBack} />
       case 15:
         return <RenderPropsProject onBack={handleBack} />
+      case 16:
+        return <CompoundComponentsProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
