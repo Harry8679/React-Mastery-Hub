@@ -10,6 +10,7 @@ import CustomHookProject from './components/CustomHookProject';
 import UseRefProject from './components/UseRefProject';
 import UseMemoProject from './components/UseMemoProject';
 import UseCallbackProject from './components/UseCallbackProject';
+import PortalsProject from './components/PortalsProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -39,6 +40,8 @@ function App() {
         return <UseMemoProject onBack={handleBack} />
       case 10:
         return <UseCallbackProject onBack={handleBack} />
+      case 11:
+        return <PortalsProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
