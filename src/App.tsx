@@ -11,6 +11,7 @@ import UseRefProject from './components/UseRefProject';
 import UseMemoProject from './components/UseMemoProject';
 import UseCallbackProject from './components/UseCallbackProject';
 import PortalsProject from './components/PortalsProject';
+import ErrorBoundaryProject from './components/ErrorBoundaryProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -42,6 +43,8 @@ function App() {
         return <UseCallbackProject onBack={handleBack} />
       case 11:
         return <PortalsProject onBack={handleBack} />
+      case 12:
+        return <ErrorBoundaryProject onBack={handleBack} />;
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
