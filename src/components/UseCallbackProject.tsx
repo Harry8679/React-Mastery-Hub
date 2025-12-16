@@ -13,21 +13,20 @@ interface ChildProps {
 const ChildComponent = memo(({ name, onClick }: ChildProps) => {
   const renderCountRef = useRef(0);
   const [renderCount, setRenderCount] = useState(0);
-  const [displayRenderCount, setDisplayRenderCount] = useState(0);
-  
+
   useEffect(() => {
     renderCountRef.current += 1;
-    setRenderCount(renderCountRef.current); // ← autorisé
+    setRenderCount(renderCountRef.current); 
   }, []);
 
-  console.log(`🔵 ${name} rendu ${renderCount.current} fois`);
+  console.log(`🔵 ${name} rendu ${renderCount} fois`);
 
   return (
     <div className="bg-white rounded-lg p-4 border-2 border-blue-200">
       <div className="flex items-center justify-between">
         <div>
           <h4 className="font-bold text-gray-800">{name}</h4>
-          <p className="text-sm text-gray-600">Renders: {renderCount.current}</p>
+          <p className="text-sm text-gray-600">Renders: {renderCount}</p>
         </div>
         <button
           onClick={onClick}
@@ -40,6 +39,7 @@ const ChildComponent = memo(({ name, onClick }: ChildProps) => {
   );
 });
 
+
 ChildComponent.displayName = 'ChildComponent';
 
 // ==================== COMPOSANT LISTE MÉMOÏSÉ ====================
@@ -50,17 +50,19 @@ interface ListItemProps {
 }
 
 const ListItem = memo(({ id, text, onRemove }: ListItemProps) => {
-  const renderCount = useRef(0);
-  
+  const renderCountRef = useRef(0);
+  const [renderCount, setRenderCount] = useState(0);
+
   useEffect(() => {
-    renderCount.current += 1;
-  });
+    renderCountRef.current += 1;
+    setRenderCount(renderCountRef.current);
+  }, []);
 
   return (
     <div className="bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between">
       <div className="flex-1">
         <span className="text-gray-800">{text}</span>
-        <span className="text-xs text-gray-500 ml-2">(renders: {renderCount.current})</span>
+        <span className="text-xs text-gray-500 ml-2">(renders: {renderCount})</span>
       </div>
       <button
         onClick={() => onRemove(id)}
@@ -71,6 +73,7 @@ const ListItem = memo(({ id, text, onRemove }: ListItemProps) => {
     </div>
   );
 });
+
 
 ListItem.displayName = 'ListItem';
 
