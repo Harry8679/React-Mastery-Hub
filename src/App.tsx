@@ -14,6 +14,7 @@ import PortalsProject from './components/PortalsProject';
 import ErrorBoundaryProject from './components/ErrorBoundaryProject';
 import LazyLoadingProject from './components/LazyLoadingProject';
 import HOCProject from './components/HOCProject';
+import RenderPropsProject from './components/RenderPropsProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -51,6 +52,8 @@ function App() {
         return <LazyLoadingProject onBack={handleBack} />
       case 14:
         return <HOCProject onBack={handleBack} />
+      case 15:
+        return <RenderPropsProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
