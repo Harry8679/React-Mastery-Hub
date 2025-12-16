@@ -408,9 +408,12 @@ export default function UseMemoProject({ onBack }: ProjectComponentProps) {
             </ul>
 
             <div className="mt-4 bg-white rounded p-4">
-              <p className="text-sm text-gray-600 font-mono mb-2">
+              {/* <p className="text-sm text-gray-600 font-mono mb-2">
                 const result = useMemo(() => expensiveCalculation(num), [num]);
-              </p>
+              </p> */}
+              <p className="text-sm text-gray-600 font-mono mb-2">
+                {"const result = useMemo(() => expensiveCalculation(num), [num]);"}
+             </p>
               <p className="text-xs text-gray-500">
                 ⚡ Le calcul n'est exécuté que si 'num' change
               </p>
