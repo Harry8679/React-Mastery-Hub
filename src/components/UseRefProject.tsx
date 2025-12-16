@@ -22,7 +22,6 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [renderCountDisplay, setRenderCountDisplay] = useState(0);
-  const [previousName, setPreviousName] = useState('');
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -99,11 +98,6 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
     };
   }, []);
 
-  useEffect(() => {
-    setPreviousName(previousNameRef.current);
-    previousNameRef.current = name;
-    }, [name]); 
-
   // ==================== EXEMPLE 4: COMPTEUR DE RENDERS ====================
   const renderCount = useRef(0);
   
@@ -115,8 +109,10 @@ export default function UseRefProject({ onBack }: ProjectComponentProps) {
   // ==================== EXEMPLE 5: PREVIOUS VALUE ====================
   const [name, setName] = useState('');
   const previousNameRef = useRef('');
+  const [previousName, setPreviousName] = useState('');
 
   useEffect(() => {
+    setPreviousName(previousNameRef.current);
     previousNameRef.current = name;
   }, [name]);
 
