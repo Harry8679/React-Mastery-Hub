@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { ChevronLeft, Code2, Search, Loader2, X, TrendingUp, Clock, Zap } from 'lucide-react';
-import { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 interface Product {
@@ -38,7 +38,8 @@ function useDebounce<T>(value: T, delay: number): T {
 function useDebounceWithStats<T>(value: T, delay: number) {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
   const [isDebouncing, setIsDebouncing] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+//   const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setIsDebouncing(true);
@@ -124,11 +125,11 @@ export default function DebounceSearchProject({ onBack }: ProjectComponentProps)
         setIsSearching(false);
 
         // Update stats
-        setStats(prev => ({
+        setStats({
           totalSearches: searchCountRef.current,
           apiCallsSaved: searchCountRef.current - apiCallCountRef.current,
           averageDelay: searchDelay
-        }));
+        });
       } else {
         setResults([]);
       }
