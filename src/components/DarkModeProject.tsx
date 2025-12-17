@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 import { ChevronLeft, Code2, Sun, Moon, Monitor, Palette, Zap, Shield } from 'lucide-react';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 type Theme = 'light' | 'dark' | 'system';
