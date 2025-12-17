@@ -65,8 +65,14 @@ function ThemeProvider({ children, storageKey = 'app-theme' }: ThemeProviderProp
   // Update document class
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add(effectiveTheme);
+
+    // Retirer toute ancienne classe dark
+    root.classList.remove("dark");
+
+    // Appliquer le thème sombre si nécessaire
+    if (effectiveTheme === "dark") {
+        root.classList.add("dark");
+    }
   }, [effectiveTheme]);
 
   const setTheme = (newTheme: Theme) => {
