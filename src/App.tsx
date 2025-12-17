@@ -21,6 +21,7 @@ import AnimationsProject from './components/AnimationsProject';
 import WebSocketChatProject from './components/WebSocketChatProject';
 import InfiniteScrollProject from './components/InfiniteScrollProject';
 import DebounceSearchProject from './components/DebounceSearchProject';
+import DarkModeProject from './components/DarkModeProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -72,6 +73,8 @@ function App() {
         return <InfiniteScrollProject onBack={handleBack} />
       case 21:
         return <DebounceSearchProject onBack={handleBack} />
+      case 22:
+        return <DarkModeProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
