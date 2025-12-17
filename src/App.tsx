@@ -16,6 +16,10 @@ import LazyLoadingProject from './components/LazyLoadingProject';
 import HOCProject from './components/HOCProject';
 import RenderPropsProject from './components/RenderPropsProject';
 import CompoundComponentsProject from './components/CompoundComponentProject';
+import DragAndDropProject from './components/DragAndDrop';
+import AnimationsProject from './components/AnimationsProject';
+import WebSocketChatProject from './components/WebSocketChatProject';
+import InfiniteScrollProject from './components/InfiniteScrollProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -57,6 +61,14 @@ function App() {
         return <RenderPropsProject onBack={handleBack} />
       case 16:
         return <CompoundComponentsProject onBack={handleBack} />
+      case 17:
+        return <DragAndDropProject onBack={handleBack} />
+      case 18:
+        return <AnimationsProject onBack={handleBack} />
+      case 19:
+        return <WebSocketChatProject onBack={handleBack} />
+      case 20:
+        return <InfiniteScrollProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
