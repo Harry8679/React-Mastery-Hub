@@ -42,6 +42,7 @@ function useDebounceWithStats<T>(value: T, delay: number) {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDebouncing(true);
     
     timeoutRef.current = setTimeout(() => {
