@@ -174,7 +174,7 @@ export default function DebounceSearchProject({ onBack }: ProjectComponentProps)
   const popularSearches = useMemo(() => ['iPhone', 'MacBook', 'Gaming', 'Audio'], []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-cyan-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -255,7 +255,7 @@ export default function DebounceSearchProject({ onBack }: ProjectComponentProps)
 
           {/* Stats Cards */}
           <div className="grid md:grid-cols-3 gap-4 mb-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4">
+            <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-xl p-4">
               <div className="flex items-center gap-3 mb-2">
                 <TrendingUp className="text-blue-600" size={24} />
                 <h3 className="font-bold text-blue-900">Frappes totales</h3>
@@ -264,7 +264,7 @@ export default function DebounceSearchProject({ onBack }: ProjectComponentProps)
               <p className="text-sm text-blue-700 mt-1">Nombre de touches tapées</p>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4">
+            <div className="bg-linear-to-br from-green-50 to-green-100 rounded-xl p-4">
               <div className="flex items-center gap-3 mb-2">
                 <Zap className="text-green-600" size={24} />
                 <h3 className="font-bold text-green-900">Appels API évités</h3>
@@ -273,7 +273,7 @@ export default function DebounceSearchProject({ onBack }: ProjectComponentProps)
               <p className="text-sm text-green-700 mt-1">Grâce au debounce</p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4">
+            <div className="bg-linear-to-br from-purple-50 to-purple-100 rounded-xl p-4">
               <div className="flex items-center gap-3 mb-2">
                 <Clock className="text-purple-600" size={24} />
                 <h3 className="font-bold text-purple-900">Délai actuel</h3>
@@ -302,7 +302,7 @@ export default function DebounceSearchProject({ onBack }: ProjectComponentProps)
           )}
 
           {/* Results */}
-          <div className="min-h-[400px]">
+          <div className="min-h-100">
             {searchTerm && results.length === 0 && !isSearching && (
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">🔍</div>
