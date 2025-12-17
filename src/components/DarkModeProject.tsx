@@ -123,7 +123,7 @@ interface DemoCardProps {
 function DemoCard({ title, description, icon: Icon, gradient }: DemoCardProps) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
-      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center mb-4`}>
+      <div className={`w-12 h-12 rounded-lg bg-linear-to-br ${gradient} flex items-center justify-center mb-4`}>
         <Icon className="text-white" size={24} />
       </div>
       <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
@@ -226,7 +226,7 @@ function DarkModeContent({ onBack }: ProjectComponentProps) {
 
           {/* Feature Showcase */}
           <div className="space-y-4 mb-8">
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
+            <div className="bg-linear-to-r from-blue-50 to-cyan-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
               <h3 className="font-bold text-gray-800 dark:text-white mb-2">
                 🎨 Éléments adaptés au thème
               </h3>
@@ -235,7 +235,7 @@ function DarkModeContent({ onBack }: ProjectComponentProps) {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
+            <div className="bg-linear-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
               <h3 className="font-bold text-gray-800 dark:text-white mb-2">
                 💾 Sauvegarde automatique
               </h3>
@@ -244,7 +244,7 @@ function DarkModeContent({ onBack }: ProjectComponentProps) {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
+            <div className="bg-linear-to-r from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
               <h3 className="font-bold text-gray-800 dark:text-white mb-2">
                 🖥️ Détection système
               </h3>
