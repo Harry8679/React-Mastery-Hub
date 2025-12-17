@@ -20,6 +20,7 @@ import DragAndDropProject from './components/DragAndDrop';
 import AnimationsProject from './components/AnimationsProject';
 import WebSocketChatProject from './components/WebSocketChatProject';
 import InfiniteScrollProject from './components/InfiniteScrollProject';
+import DebounceSearchProject from './components/DebounceSearchProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -69,6 +70,8 @@ function App() {
         return <WebSocketChatProject onBack={handleBack} />
       case 20:
         return <InfiniteScrollProject onBack={handleBack} />
+      case 21:
+        return <DebounceSearchProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
