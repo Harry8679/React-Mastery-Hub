@@ -30,6 +30,17 @@ interface ThemeProviderProps {
   storageKey?: string;
 }
 
+useEffect(() => {
+  const root = document.documentElement;
+
+  if (effectiveTheme === "dark") {
+    root.classList.add("dark");
+  } else {
+    root.classList.remove("dark");
+  }
+}, [effectiveTheme]);
+
+
 function ThemeProvider({ children, storageKey = 'app-theme' }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(() => {
     const stored = localStorage.getItem(storageKey);
