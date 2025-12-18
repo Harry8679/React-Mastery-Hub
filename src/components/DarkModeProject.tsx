@@ -341,6 +341,6 @@ function DarkModeContent({ onBack }: ProjectComponentProps) {
           </div>
         </div>
       </div>
-    </div>
+    </div>  
   );
 }
