@@ -24,6 +24,7 @@ import DebounceSearchProject from './components/DebounceSearchProject';
 import DarkModeProject from './components/DarkModeProject';
 import MultiStepFormProject from './components/MultiStepFormProjectt';
 import FileUploadProject from './components/FileUploadProject';
+import CanvasDrawingProject from './components/CanvasDrawingProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -79,6 +80,8 @@ function App() {
         return <DarkModeProject onBack={handleBack} />
       case 23:
         return <MultiStepFormProject onBack={handleBack} />
+      case 24:
+        return <CanvasDrawingProject onBack={handleBack} />
       case 27:
         return <FileUploadProject onBack={handleBack} />
       default:
