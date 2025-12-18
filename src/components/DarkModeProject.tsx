@@ -30,41 +30,40 @@ interface ThemeProviderProps {
   storageKey?: string;
 }
 
-
-function ThemeProvider({ children, storageKey = "app-theme" }: ThemeProviderProps) {
+function ThemeProvider({ children, storageKey = 'app-theme' }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(() => {
     const stored = localStorage.getItem(storageKey);
-    return (stored as Theme) || "system";
+    return (stored as Theme) || 'system';
   });
 
-  const [effectiveTheme, setEffectiveTheme] = useState<"light" | "dark">("light");
+  const [effectiveTheme, setEffectiveTheme] = useState<'light' | 'dark'>('light');
 
   // 🎯 1) Détection du thème système
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     const update = () => {
-      if (theme === "system") {
-        setEffectiveTheme(mediaQuery.matches ? "dark" : "light");
+      if (theme === 'system') {
+        setEffectiveTheme(mediaQuery.matches ? 'dark' : 'light');
       } else {
         setEffectiveTheme(theme);
       }
     };
 
     update();
-    mediaQuery.addEventListener("change", update);
+    mediaQuery.addEventListener('change', update);
 
-    return () => mediaQuery.removeEventListener("change", update);
+    return () => mediaQuery.removeEventListener('change', update);
   }, [theme]);
 
   // 🎯 2) Appliquer la classe "dark" sur <html>
   useEffect(() => {
     const root = document.documentElement;
 
-    if (effectiveTheme === "dark") {
-      root.classList.add("dark");
+    if (effectiveTheme === 'dark') {
+      root.classList.add('dark');
     } else {
-      root.classList.remove("dark");
+      root.classList.remove('dark');
     }
   }, [effectiveTheme]);
 
@@ -80,7 +79,6 @@ function ThemeProvider({ children, storageKey = "app-theme" }: ThemeProviderProp
     </ThemeContext.Provider>
   );
 }
-
 
 // ==================== THEME TOGGLE BUTTON ====================
 function ThemeToggleButton() {
@@ -124,7 +122,7 @@ interface DemoCardProps {
 function DemoCard({ title, description, icon: Icon, gradient }: DemoCardProps) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700">
-      <div className={`w-12 h-12 rounded-lg bg-linear-to-br ${gradient} flex items-center justify-center mb-4`}>
+      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center mb-4`}>
         <Icon className="text-white" size={24} />
       </div>
       <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
@@ -227,7 +225,7 @@ function DarkModeContent({ onBack }: ProjectComponentProps) {
 
           {/* Feature Showcase */}
           <div className="space-y-4 mb-8">
-            <div className="bg-linear-to-r from-blue-50 to-cyan-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
               <h3 className="font-bold text-gray-800 dark:text-white mb-2">
                 🎨 Éléments adaptés au thème
               </h3>
@@ -236,7 +234,7 @@ function DarkModeContent({ onBack }: ProjectComponentProps) {
               </p>
             </div>
 
-            <div className="bg-linear-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
               <h3 className="font-bold text-gray-800 dark:text-white mb-2">
                 💾 Sauvegarde automatique
               </h3>
@@ -245,7 +243,7 @@ function DarkModeContent({ onBack }: ProjectComponentProps) {
               </p>
             </div>
 
-            <div className="bg-linear-to-r from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-6 transition-colors">
               <h3 className="font-bold text-gray-800 dark:text-white mb-2">
                 🖥️ Détection système
               </h3>
