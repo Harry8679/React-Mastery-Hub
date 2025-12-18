@@ -79,7 +79,7 @@ function App() {
         return <DarkModeProject onBack={handleBack} />
       case 23:
         return <MultiStepFormProject onBack={handleBack} />
-      case 24:
+      case 27:
         return <FileUploadProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
