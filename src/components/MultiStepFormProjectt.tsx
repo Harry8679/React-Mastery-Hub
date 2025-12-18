@@ -133,7 +133,7 @@ export default function MultiStepFormProject({ onBack }: ProjectComponentProps) 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-indigo-50 to-purple-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -206,7 +206,7 @@ export default function MultiStepFormProject({ onBack }: ProjectComponentProps) 
           </div>
 
           {/* Step Content */}
-          <div className="min-h-[400px] mb-6">
+          <div className="min-h-100 mb-6">
             {/* Step 1: Personal Info */}
             {currentStep === 1 && (
               <div className="space-y-4 animate-fadeIn">
