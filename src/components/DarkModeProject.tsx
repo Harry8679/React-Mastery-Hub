@@ -30,62 +30,45 @@ interface ThemeProviderProps {
   storageKey?: string;
 }
 
-useEffect(() => {
-  const root = document.documentElement;
 
-  if (effectiveTheme === "dark") {
-    root.classList.add("dark");
-  } else {
-    root.classList.remove("dark");
-  }
-}, [effectiveTheme]);
-
-
-function ThemeProvider({ children, storageKey = 'app-theme' }: ThemeProviderProps) {
+function ThemeProvider({ children, storageKey = "app-theme" }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(() => {
     const stored = localStorage.getItem(storageKey);
-    return (stored as Theme) || 'system';
+    return (stored as Theme) || "system";
   });
 
-  const [effectiveTheme, setEffectiveTheme] = useState<'light' | 'dark'>('light');
+  const [effectiveTheme, setEffectiveTheme] = useState<"light" | "dark">("light");
 
-  // Detect system theme
+  // 🎯 1) Détection du thème système
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    const updateEffectiveTheme = () => {
-      if (theme === 'system') {
-        setEffectiveTheme(mediaQuery.matches ? 'dark' : 'light');
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const update = () => {
+      if (theme === "system") {
+        setEffectiveTheme(mediaQuery.matches ? "dark" : "light");
       } else {
         setEffectiveTheme(theme);
       }
     };
 
-    updateEffectiveTheme();
+    update();
+    mediaQuery.addEventListener("change", update);
 
-    const listener = (e: MediaQueryListEvent) => {
-      if (theme === 'system') {
-        setEffectiveTheme(e.matches ? 'dark' : 'light');
-      }
-    };
-
-    mediaQuery.addEventListener('change', listener);
-    return () => mediaQuery.removeEventListener('change', listener);
+    return () => mediaQuery.removeEventListener("change", update);
   }, [theme]);
 
-  // Update document class
+  // 🎯 2) Appliquer la classe "dark" sur <html>
   useEffect(() => {
     const root = document.documentElement;
 
-    // Retirer toute ancienne classe dark
-    root.classList.remove("dark");
-
-    // Appliquer le thème sombre si nécessaire
     if (effectiveTheme === "dark") {
-        root.classList.add("dark");
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
     }
   }, [effectiveTheme]);
 
+  // 🎯 3) Setter de thème + persistance
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
     localStorage.setItem(storageKey, newTheme);
@@ -97,6 +80,7 @@ function ThemeProvider({ children, storageKey = 'app-theme' }: ThemeProviderProp
     </ThemeContext.Provider>
   );
 }
+
 
 // ==================== THEME TOGGLE BUTTON ====================
 function ThemeToggleButton() {
