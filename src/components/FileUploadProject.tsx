@@ -1,4 +1,5 @@
-import { useState, useRef, DragEvent, ChangeEvent } from 'react';
+import { useState, useRef } from 'react';
+import type { DragEvent, ChangeEvent } from 'react';
 import { ChevronLeft, Code2, Upload, X, File, Image as ImageIcon, FileText, Music, Video, Check, Loader2 } from 'lucide-react';
 import type { ProjectComponentProps } from '../../types';
 
