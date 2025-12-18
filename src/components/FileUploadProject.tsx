@@ -402,7 +402,7 @@ export default function FileUploadProject({ onBack }: ProjectComponentProps) {
                 reader.readAsDataURL(file);
               </p>
               <p className="text-sm text-gray-600 font-mono">
-                onDrop={(e) =&gt; handleFiles(e.dataTransfer.files)}
+                {'onDrop={(e) => handleFiles(e.dataTransfer.files)}'}
               </p>
             </div>
 
