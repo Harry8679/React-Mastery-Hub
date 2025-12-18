@@ -22,6 +22,7 @@ import WebSocketChatProject from './components/WebSocketChatProject';
 import InfiniteScrollProject from './components/InfiniteScrollProject';
 import DebounceSearchProject from './components/DebounceSearchProject';
 import DarkModeProject from './components/DarkModeProject';
+import MultiStepFormProject from './components/MultiStepFormProjectt';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -75,6 +76,8 @@ function App() {
         return <DebounceSearchProject onBack={handleBack} />
       case 22:
         return <DarkModeProject onBack={handleBack} />
+      case 23:
+        return <MultiStepFormProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
