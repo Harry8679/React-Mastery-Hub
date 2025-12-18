@@ -23,6 +23,7 @@ import InfiniteScrollProject from './components/InfiniteScrollProject';
 import DebounceSearchProject from './components/DebounceSearchProject';
 import DarkModeProject from './components/DarkModeProject';
 import MultiStepFormProject from './components/MultiStepFormProjectt';
+import FileUploadProject from './components/FileUploadProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -78,6 +79,8 @@ function App() {
         return <DarkModeProject onBack={handleBack} />
       case 23:
         return <MultiStepFormProject onBack={handleBack} />
+      case 24:
+        return <FileUploadProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
