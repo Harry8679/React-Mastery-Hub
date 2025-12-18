@@ -1,6 +1,7 @@
-import { useRef, useState, useEffect, MouseEvent, TouchEvent } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import type { MouseEvent, TouchEvent } from 'react';
 import { ChevronLeft, Code2, Trash2, Download, Pencil, Eraser, Palette, Minus, Circle } from 'lucide-react';
-import type { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 type Tool = 'pencil' | 'eraser' | 'line' | 'circle' | 'rectangle';
