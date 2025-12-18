@@ -25,6 +25,11 @@ import DarkModeProject from './components/DarkModeProject';
 import MultiStepFormProject from './components/MultiStepFormProjectt';
 import FileUploadProject from './components/FileUploadProject';
 import CanvasDrawingProject from './components/CanvasDrawingProject';
+import ZustandStoreProject from './components/ZustandStoreProject';
+import ReactQueryProject from './components/ReactQueryProject';
+import MarkdownEditorProject from './components/MarkdownEditorProject';
+import VirtualScrollProject from './components/VirtualScrollProject';
+import TicTacToeProject from './components/TicTacToe';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -82,8 +87,18 @@ function App() {
         return <MultiStepFormProject onBack={handleBack} />
       case 24:
         return <CanvasDrawingProject onBack={handleBack} />
+      case 25:
+        return <ZustandStoreProject onBack={handleBack} />
+      case 26:
+        return <ReactQueryProject onBack={handleBack} />
       case 27:
         return <FileUploadProject onBack={handleBack} />
+      case 28:
+        return <MarkdownEditorProject onBack={handleBack} />
+      case 29:
+        return <VirtualScrollProject onBack={handleBack} />
+      case 30:
+        return <TicTacToeProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
