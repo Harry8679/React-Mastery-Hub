@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2, User, Briefcase, CreditCard, Check, ArrowRight, ArrowLeft } from 'lucide-react';
-import type { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 interface PersonalInfo {
