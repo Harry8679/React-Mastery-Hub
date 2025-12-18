@@ -145,7 +145,7 @@ export default function FileUploadProject({ onBack }: ProjectComponentProps) {
   const totalSize = files.reduce((acc, f) => acc + f.file.size, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-blue-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-cyan-50 to-blue-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -172,15 +172,15 @@ export default function FileUploadProject({ onBack }: ProjectComponentProps) {
 
           {/* Stats */}
           <div className="grid md:grid-cols-3 gap-4 mb-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4">
+            <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-xl p-4">
               <div className="text-2xl font-bold text-blue-600">{files.length}</div>
               <div className="text-sm text-blue-700">Fichiers total</div>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4">
+            <div className="bg-linear-to-br from-green-50 to-green-100 rounded-xl p-4">
               <div className="text-2xl font-bold text-green-600">{completedFiles}</div>
               <div className="text-sm text-green-700">Complétés</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4">
+            <div className="bg-linear-to-br from-purple-50 to-purple-100 rounded-xl p-4">
               <div className="text-2xl font-bold text-purple-600">{formatFileSize(totalSize)}</div>
               <div className="text-sm text-purple-700">Taille totale</div>
             </div>
@@ -256,7 +256,7 @@ export default function FileUploadProject({ onBack }: ProjectComponentProps) {
                     >
                       <div className="flex items-start gap-4">
                         {/* Preview or Icon */}
-                        <div className="flex-shrink-0">
+                        <div className="shrink-0">
                           {isImage && uploadedFile.preview ? (
                             <img
                               src={uploadedFile.preview}
@@ -342,7 +342,7 @@ export default function FileUploadProject({ onBack }: ProjectComponentProps) {
                         {/* Remove Button */}
                         <button
                           onClick={() => handleRemoveFile(uploadedFile.id)}
-                          className="flex-shrink-0 p-2 hover:bg-red-50 rounded-lg transition-colors"
+                          className="shrink-0 p-2 hover:bg-red-50 rounded-lg transition-colors"
                         >
                           <X className="text-red-500" size={20} />
                         </button>
