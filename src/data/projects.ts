@@ -273,5 +273,14 @@ export const projects: Project[] = [
       color: "from-purple-500 to-pink-500",
       icon: "🔔",
       component: "NotificationsProject"
-  }
+  },
+  {
+    id: 34,
+    title: "Image Gallery",
+    concepts: ["Gallery", "Lightbox", "Filters"],
+    difficulty: "Intermédiaire",
+    color: "from-gray-500 to-slate-600",
+    icon: "🖼️",
+    component: "ImageGalleryProject"
+}
 ];
