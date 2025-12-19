@@ -1,6 +1,7 @@
-import { useState, createContext, useContext, ReactNode } from 'react';
+import { useState, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import { ChevronLeft, Code2, Lock, User, Mail, Eye, EyeOff, LogIn, UserPlus, LogOut, Shield, CheckCircle, XCircle } from 'lucide-react';
-import type { ProjectComponentProps } from '../../types';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 interface UserData {
@@ -30,6 +31,7 @@ const MOCK_USERS: Array<{ email: string; password: string; name: string; role: '
 // ==================== CONTEXT ====================
 const AuthContext = createContext<AuthContextType | null>(null);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
@@ -430,7 +432,7 @@ function Dashboard() {
   return (
     <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full">
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mb-4 text-white text-3xl font-bold">
+        <div className="inline-flex items-center justify-center w-20 h-20 bg-linear-to-br from-blue-500 to-purple-500 rounded-full mb-4 text-white text-3xl font-bold">
           {user.name.charAt(0).toUpperCase()}
         </div>
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Bienvenue, {user.name} !</h2>
@@ -526,7 +528,7 @@ function AuthContent({ onBack, currentView, setCurrentView }: AuthContentProps) 
   const { isAuthenticated } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-pink-50 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
