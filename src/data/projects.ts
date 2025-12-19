@@ -282,5 +282,5 @@ export const projects: Project[] = [
     color: "from-gray-500 to-slate-600",
     icon: "🖼️",
     component: "ImageGalleryProject"
-}
+  }
 ];
