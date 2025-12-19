@@ -248,21 +248,30 @@ export const projects: Project[] = [
     icon: "🎮"
   },
   {
-  id: 31,
-  title: "Shopping Cart",
-  concepts: ["E-commerce", "Cart Management", "State"],
-  difficulty: "Intermédiaire",
-  color: "from-green-500 to-emerald-500",
-  icon: "🛒",
-  component: "ShoppingCartProject"
-},
-{
-  id: 32,
-  title: "Pagination",
-  concepts: ["Pagination", "Data Management", "UX"],
-  difficulty: "Intermédiaire",
-  color: "from-indigo-500 to-blue-500",
-  icon: "📄",
-  component: "PaginationProject"
-}
+    id: 31,
+    title: "Shopping Cart",
+    concepts: ["E-commerce", "Cart Management", "State"],
+    difficulty: "Intermédiaire",
+    color: "from-green-500 to-emerald-500",
+    icon: "🛒",
+    component: "ShoppingCartProject"
+  },
+  {
+      id: 32,
+      title: "Pagination",
+      concepts: ["Pagination", "Data Management", "UX"],
+      difficulty: "Intermédiaire",
+      color: "from-indigo-500 to-blue-500",
+      icon: "📄",
+      component: "PaginationProject"
+  },
+  {
+      id: 33,
+      title: "Notifications / Toast",
+      concepts: ["Toast", "Notifications", "Context API"],
+      difficulty: "Intermédiaire",
+      color: "from-purple-500 to-pink-500",
+      icon: "🔔",
+      component: "NotificationsProject"
+  }
 ];
