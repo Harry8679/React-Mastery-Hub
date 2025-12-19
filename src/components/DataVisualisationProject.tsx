@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2, BarChart3, LineChart as LineChartIcon, PieChart as PieChartIcon, TrendingUp } from 'lucide-react';
-import type { ProjectComponentProps } from '../../types';
 import {
   LineChart,
   Line,
