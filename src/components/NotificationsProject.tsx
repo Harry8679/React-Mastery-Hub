@@ -1,6 +1,6 @@
-import { useState, useEffect, createContext, useContext, ReactNode } from 'react';
+import { useState, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import { ChevronLeft, Code2, CheckCircle, XCircle, AlertCircle, Info, X, Bell } from 'lucide-react';
-import type { ProjectComponentProps } from '../../types';
 
 // ==================== TYPES ====================
 type NotificationType = 'success' | 'error' | 'warning' | 'info';
