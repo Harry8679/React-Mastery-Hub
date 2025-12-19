@@ -33,6 +33,7 @@ import TicTacToeProject from './components/TicTacToe';
 import ShoppingCartProject from './components/ShoppingCartProject';
 import PaginationProject from './components/PaginationProject';
 import NotificationsProject from './components/NotificationsProject';
+import ImageGalleryProject from './components/ImagGalleryProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -108,6 +109,8 @@ function App() {
         return <PaginationProject onBack={handleBack} />
       case 33:
         return <NotificationsProject onBack={handleBack} />
+      case 34:
+        return <ImageGalleryProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
