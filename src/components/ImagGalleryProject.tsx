@@ -144,7 +144,7 @@ function ImageCard({ image, onClick }: ImageCardProps) {
         alt={image.title}
         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
           <h3 className="font-bold text-lg mb-1">{image.title}</h3>
           <div className="flex items-center justify-between text-sm">
@@ -295,7 +295,7 @@ export default function ImageGalleryProject({ onBack }: ProjectComponentProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 p-8">
       <button
         onClick={onBack}
         className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -382,7 +382,7 @@ export default function ImageGalleryProject({ onBack }: ProjectComponentProps) {
           </div>
 
           {/* Stats */}
-          <div className="mb-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4">
+          <div className="mb-6 bg-linear-to-r from-blue-50 to-purple-50 rounded-xl p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <ImageIcon size={20} className="text-blue-600" />
