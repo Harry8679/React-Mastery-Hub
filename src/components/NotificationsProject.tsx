@@ -1,6 +1,7 @@
 import { useState, createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 import { ChevronLeft, Code2, CheckCircle, XCircle, AlertCircle, Info, X, Bell } from 'lucide-react';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 type NotificationType = 'success' | 'error' | 'warning' | 'info';
@@ -23,6 +24,7 @@ interface NotificationContextType {
 // ==================== CONTEXT ====================
 const NotificationContext = createContext<NotificationContextType | null>(null);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useNotifications = () => {
   const context = useContext(NotificationContext);
   if (!context) {
@@ -41,6 +43,7 @@ function NotificationProvider({ children, position = 'top-right' }: Notification
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   const addNotification = (notification: Omit<Notification, 'id'>) => {
+    // eslint-disable-next-line react-hooks/purity
     const id = `notification-${Date.now()}-${Math.random()}`;
     const newNotification = { id, ...notification };
     setNotifications((prev) => [...prev, newNotification]);
