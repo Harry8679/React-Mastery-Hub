@@ -30,6 +30,8 @@ import ReactQueryProject from './components/ReactQueryProject';
 import MarkdownEditorProject from './components/MarkdownEditorProject';
 import VirtualScrollProject from './components/VirtualScrollProject';
 import TicTacToeProject from './components/TicTacToe';
+import ShoppingCartProject from './components/ShoppingCartProject';
+import PaginationProject from './components/PaginationProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -99,6 +101,10 @@ function App() {
         return <VirtualScrollProject onBack={handleBack} />
       case 30:
         return <TicTacToeProject onBack={handleBack} />
+      case 31:
+        return <ShoppingCartProject onBack={handleBack} />
+      case 32:
+        return <PaginationProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }

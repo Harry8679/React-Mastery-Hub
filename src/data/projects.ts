@@ -246,5 +246,14 @@ export const projects: Project[] = [
     difficulty: "Intermédiaire",
     color: "from-pink-500 to-rose-500",
     icon: "🎮"
+  },
+  {
+    id: 31,
+    title: "Shopping Cart",
+    concepts: ["E-commerce", "Cart Management", "State"],
+    difficulty: "Intermédiaire",
+    color: "from-green-500 to-emerald-500",
+    icon: "🛒",
+    component: "ShoppingCartProject"
   }
 ];
