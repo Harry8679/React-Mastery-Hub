@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2, BarChart3, LineChart as LineChartIcon, PieChart as PieChartIcon, TrendingUp } from 'lucide-react';
-import type { ProjectComponentProps } from '../../types';
 import {
   LineChart,
   Line,
@@ -18,7 +17,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from 'recharts';
-import type { TooltipProps } from 'recharts';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 type ChartType = 'line' | 'bar' | 'pie' | 'area';
