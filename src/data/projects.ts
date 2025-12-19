@@ -282,5 +282,14 @@ export const projects: Project[] = [
     color: "from-gray-500 to-slate-600",
     icon: "🖼️",
     component: "ImageGalleryProject"
+  },
+  {
+    id: 35,
+    title: "Data Visualization",
+    concepts: ["Charts", "Recharts", "Data Analysis"],
+    difficulty: "Intermédiaire",
+    color: "from-blue-500 to-indigo-600",
+    icon: "📊",
+    component: "DataVisualizationProject"
   }
 ];
