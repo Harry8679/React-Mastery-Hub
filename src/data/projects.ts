@@ -291,5 +291,14 @@ export const projects: Project[] = [
     color: "from-blue-500 to-indigo-600",
     icon: "📊",
     component: "DataVisualizationProject"
+  },
+  {
+    id: 36,
+    title: "Authentication Flow",
+    concepts: ["Auth", "Login/Register", "Protected Routes"],
+    difficulty: "Avancé",
+    color: "from-purple-500 to-pink-500",
+    icon: "🔐",
+    component: "AuthenticationFlowProject"
   }
 ];
