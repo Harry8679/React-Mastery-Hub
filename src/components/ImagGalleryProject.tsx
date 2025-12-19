@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, Code2, X, ChevronRight, ChevronLeft as ChevronLeftIcon, Search, Grid3x3, Grid2x2, Image as ImageIcon, Download, ZoomIn } from 'lucide-react';
-import type { ProjectComponentProps } from '../../types';
+import { ChevronLeft, Code2, X, ChevronRight, ChevronLeft as ChevronLeftIcon, Search, Grid3x3, Grid2x2, Image as ImageIcon, Download } from 'lucide-react';
+import type { ProjectComponentProps } from '../types';
 
 // ==================== TYPES ====================
 interface Image {
