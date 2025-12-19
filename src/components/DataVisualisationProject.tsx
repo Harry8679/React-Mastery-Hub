@@ -1,9 +1,35 @@
 import { useState } from 'react';
 import { ChevronLeft, Code2, BarChart3, LineChart as LineChartIcon, PieChart as PieChartIcon, TrendingUp } from 'lucide-react';
-import { LineChart, Line, BarChart, Bar, PieChart, Pie, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
+import type { ProjectComponentProps } from '../../types';
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  Cell,
+} from 'recharts';
+import type { TooltipProps } from 'recharts';
 
 // ==================== TYPES ====================
 type ChartType = 'line' | 'bar' | 'pie' | 'area';
+
+interface TooltipPayload {
+  name: string;
+  value: number;
+  color: string;
+  dataKey: string;
+  payload: Record<string, unknown>;
+}
 
 // ==================== MOCK DATA ====================
 const salesData = [
@@ -78,14 +104,14 @@ function StatsCard({ title, value, change, icon: Icon, color }: StatsCardProps) 
 }
 
 // Custom Tooltip
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-white p-4 rounded-lg shadow-lg border border-gray-200">
         <p className="font-semibold text-gray-800 mb-2">{label}</p>
-        {payload.map((entry: any, index: number) => (
+        {payload.map((entry, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>
-            {entry.name}: {entry.value.toLocaleString()}
+            {entry.name}: {entry.value?.toLocaleString()}
           </p>
         ))}
       </div>
