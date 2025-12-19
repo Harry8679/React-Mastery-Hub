@@ -23,14 +23,6 @@ import type { TooltipProps } from 'recharts';
 // ==================== TYPES ====================
 type ChartType = 'line' | 'bar' | 'pie' | 'area';
 
-interface TooltipPayload {
-  name: string;
-  value: number;
-  color: string;
-  dataKey: string;
-  payload: Record<string, unknown>;
-}
-
 // ==================== MOCK DATA ====================
 const salesData = [
   { month: 'Jan', sales: 4000, revenue: 2400, profit: 1600 },
@@ -72,6 +64,18 @@ const performanceData = [
   { metric: 'SEO', value: 95 },
 ];
 
+interface CustomTooltipEntry {
+  name: string;
+  value: number;
+  color: string;
+}
+
+interface CustomTooltipProps {
+  active?: boolean;
+  label?: string | number;
+  payload?: CustomTooltipEntry[];
+}
+
 // ==================== COMPOSANTS ====================
 
 // Stats Cards
@@ -103,22 +107,23 @@ function StatsCard({ title, value, change, icon: Icon, color }: StatsCardProps) 
   );
 }
 
-// Custom Tooltip
-const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white p-4 rounded-lg shadow-lg border border-gray-200">
-        <p className="font-semibold text-gray-800 mb-2">{label}</p>
-        {payload.map((entry, index: number) => (
-          <p key={index} className="text-sm" style={{ color: entry.color }}>
-            {entry.name}: {entry.value?.toLocaleString()}
-          </p>
-        ))}
-      </div>
-    );
-  }
-  return null;
+const CustomTooltip = ({ active, label, payload }: CustomTooltipProps) => {
+  if (!active || !payload || payload.length === 0) return null;
+
+  return (
+    <div className="bg-white p-4 rounded-lg shadow-lg border border-gray-200">
+      <p className="font-semibold text-gray-800 mb-2">{label}</p>
+
+      {payload.map((entry, index) => (
+        <p key={index} className="text-sm" style={{ color: entry.color }}>
+          {entry.name}: {entry.value.toLocaleString()}
+        </p>
+      ))}
+    </div>
+  );
 };
+
+
 
 // ==================== COMPOSANT PRINCIPAL ====================
 export default function DataVisualizationProject({ onBack }: ProjectComponentProps) {
