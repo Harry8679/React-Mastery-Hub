@@ -32,6 +32,7 @@ import VirtualScrollProject from './components/VirtualScrollProject';
 import TicTacToeProject from './components/TicTacToe';
 import ShoppingCartProject from './components/ShoppingCartProject';
 import PaginationProject from './components/PaginationProject';
+import NotificationsProject from './components/NotificationsProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -105,6 +106,8 @@ function App() {
         return <ShoppingCartProject onBack={handleBack} />
       case 32:
         return <PaginationProject onBack={handleBack} />
+      case 33:
+        return <NotificationsProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
