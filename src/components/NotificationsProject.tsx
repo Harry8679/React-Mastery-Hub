@@ -338,7 +338,7 @@ export default function NotificationsProject({ onBack }: ProjectComponentProps) 
 
   return (
     <NotificationProvider position={position}>
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-8">
+      <div className="min-h-screen bg-linear-to-br from-purple-50 to-pink-50 p-8">
         <button
           onClick={onBack}
           className="mb-8 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-all"
@@ -364,7 +364,7 @@ export default function NotificationsProject({ onBack }: ProjectComponentProps) 
             </div>
 
             {/* Position Selector */}
-            <div className="mb-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6">
+            <div className="mb-8 bg-linear-to-r from-purple-50 to-pink-50 rounded-xl p-6">
               <h3 className="font-bold text-gray-800 mb-4">Position des Notifications</h3>
               <div className="grid grid-cols-3 gap-2">
                 {(['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'] as NotificationPosition[]).map((pos) => (
