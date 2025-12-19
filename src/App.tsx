@@ -34,6 +34,7 @@ import ShoppingCartProject from './components/ShoppingCartProject';
 import PaginationProject from './components/PaginationProject';
 import NotificationsProject from './components/NotificationsProject';
 import ImageGalleryProject from './components/ImagGalleryProject';
+import DataVisualizationProject from './components/DataVisualisationProject';
 
 function App() {
   const [currentProject, setCurrentProject] = useState<number | null>(null);
@@ -111,6 +112,8 @@ function App() {
         return <NotificationsProject onBack={handleBack} />
       case 34:
         return <ImageGalleryProject onBack={handleBack} />
+      case 35:
+        return <DataVisualizationProject onBack={handleBack} />
       default:
         return <PlaceholderProject projectId={currentProject!} onBack={handleBack} />;
     }
